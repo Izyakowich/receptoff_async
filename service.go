@@ -85,7 +85,7 @@ func sendResult(Id int, id_user int, result bool) error {
 		return fmt.Errorf("Ошибка при маршалинге JSON данных: %v", err)
 	}
 
-	req, err := http.NewRequest("PUT", fmt.Sprintf("http://0.0.0.0:8000/update/%d/", Id), bytes.NewBuffer(jsonData))
+	req, err := http.NewRequest("PUT", fmt.Sprintf("http://127.0.0.1:8000/update/%d/", Id), bytes.NewBuffer(jsonData))
 	if err != nil {
 		return fmt.Errorf("Ошибка при создании PUT-запроса: %v", err)
 	}
